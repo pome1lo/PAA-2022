@@ -1,0 +1,92 @@
+------ Протокол ------
+Дата: 18.12.2022 03:35:54  
+
+------ Параметры ------
+-in:..\in.txt
+-out:asm.asm
+-log:log.txt
+-mfst:mfst.txt
+
+------ Исходные данные ------
+Количество символов: 653
+Проигнорировано: 34
+Количество строк: 48
+
+------ Таблица идентификаторов ------
+index           name      type        id type     scope      lexTable index
+    0      factorial      int         f          global              2
+    1              x      int         p       factorial              5
+    2            ret      int         v       factorial             10
+    3             L0      int         l       factorial             12
+    4             L1      int         l       factorial             18
+    5              y      int         v         scope_2             47
+    6         strCmp      int         f          global             70
+    7              a      str         p          strCmp             73
+    8              b      str         p          strCmp             76
+    9         strLen      int         f          global             82
+   10              a      str         p          strLen             85
+   11     strCmpTest      str         f          global             90
+   12            res      int         v      strCmpTest             96
+   13             L2      str         l      strCmpTest            100
+   14             L3      str         l      strCmpTest            102
+   15         outStr      str         v      strCmpTest            107
+   16             L4      str         l         scope_3            118
+   17             L5      int         l      strCmpTest            125
+   18             L6      str         l         scope_4            130
+   19             L7      int         l      strCmpTest            137
+   20             L8      str         l         scope_5            142
+   21           main      int         f          global            150
+   22              x      int         v            main            153
+   23             L9      str         l            main            157
+   24              y      int         v            main            162
+   25              z      str         v            main            174
+
+------ Таблица лексем ------
+tfi<0>(ti<1>){dti<2>=l<3>;
+e(i<1><l<4>){i<2>=l<4>;
+}e(i<1>~l<4>){i<2>=l<3>;
+}e(i<1>>l<4>){dti<5>=i<1>-l<3>;
+i<2>=i<0>(i<5>)*i<1>;
+}ri<2>;
+}dtfi<6>(ti<7>,ti<8>);
+dtfi<9>(ti<10>);
+tfi<11>(){dti<12>=i<6>(l<13>,l<14>);
+dti<15>;
+e(i<12>~l<3>){i<15>=l<16>;
+}e(i<12>~l<17>){i<15>=l<18>;
+}e(i<12>~l<19>){i<15>=l<20>;
+}ri<15>;
+}m{dti<22>=i<9>(l<23>);
+dti<24>=i<0>(i<22>);
+pi<24>;
+dti<25>=i<11>();
+pi<25>;
+rl<4>;
+}
+
+------ Синтаксический анализ выполнен без ошибок ------
+------ Польская нотация выполнена без ошибок ------
+tfi<0>(ti<1>){dti<2>=l<3>;
+e(i<1><l<4>){i<2>=l<4>;
+}e(i<1>~l<4>){i<2>=l<3>;
+}e(i<1>>l<4>){dti<5>=i<1>l<3>-;
+i<2>=i<5>@<0>1i<1>*;
+}ri<2>;
+}dtfi<6>(ti<7>,ti<8>);
+dtfi<9>(ti<10>);
+tfi<11>(){dti<12>=l<13>l<14>@<6>2;
+dti<15>;
+e(i<12>~l<3>){i<15>=l<16>;
+}e(i<12>~l<17>){i<15>=l<18>;
+}e(i<12>~l<19>){i<15>=l<20>;
+}ri<15>;
+}m{dti<22>=l<23>@<9>1;
+dti<24>=i<22>@<0>1;
+pi<24>;
+dti<25>=@<11>0;
+pi<25>;
+rl<4>;
+}
+
+------ Семантический анализ выполнен без ошибок ------
+------ Генерация кода выполнен без ошибок ------

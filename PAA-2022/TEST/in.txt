@@ -1,0 +1,47 @@
+uint function factorial(uint x)
+{
+	new uint ret = 1;
+	if (x < 0)
+	{
+		ret =  0;
+	}
+	if (x == 0)
+	{
+		ret = 1;
+	}
+	if (x > 0)
+	{
+		new uint y = x - 1;
+		ret = factorial(y) * x;
+	}
+	return ret;
+}
+new uint function strCmp(string a, string b);
+new uint function strLen(string a);
+string function strCmpTest()
+{
+	new uint res = strCmp('aaa', 'bbb');
+	new string outStr;
+	if (res == 1) 
+	{
+		outStr = 'Строка 1 больше строки 2';
+	}
+	if (res == 2) 
+	{
+		outStr = 'Строка 2 больше строки 1';
+	}
+	if (res == 3)
+	{
+		outStr = 'Длина строк не совпадает, или передана пустая строка';
+	}
+	return outStr;
+}
+main
+{
+	new uint x = strLen('hello');
+	new uint y = factorial(x);
+	output y;
+	new string z = strCmpTest();
+	output z;
+	return 0;
+}
